@@ -1,7 +1,7 @@
 import { Configuration, OpenAIApi } from "openai";
 
 const config = new Configuration({
-	apiKey: "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",
+	apiKey: "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",
 });
 
 const openai = new OpenAIApi(config);
@@ -18,12 +18,12 @@ const runPrompt = async (question, res) => {
 	const response = await openai.createCompletion({
 		model: "text-davinci-001",
 		prompt: question,
-        temperature: 0,
-        max_tokens: 100,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0,
-        stop: ["input:"],
+         temperature: 0,
+    max_tokens: 100,
+    top_p: 1,
+    frequency_penalty: 0,
+    presence_penalty: 0,
+    stop: ["input:"],
 		////max_tokens: 2048,
 	//	temperature: 1,
 	});
@@ -31,7 +31,7 @@ const runPrompt = async (question, res) => {
 	const parsableJSONresponse = response.data.choices[0].text;
 //	const parsedResponse = JSON.parse(parsableJSONresponse);
 	////console.log("Question: ", parsedResponse.Q);
-//	console.log("Answer: ", response.data.choices);
+	console.log("Answer: ", response.data.choices);
     res.send(parsableJSONresponse);
 };
 
