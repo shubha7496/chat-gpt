@@ -32,7 +32,9 @@ const runPrompt = async (question, res) => {
 //	const parsedResponse = JSON.parse(parsableJSONresponse);
 	////console.log("Question: ", parsedResponse.Q);
 	console.log("Answer: ", response.data.choices);
-    res.send(parsableJSONresponse);
+    // res.send(parsableJSONresponse)
+    res.status(200).json({result:
+        parsableJSONresponse})
 };
 
 export default runPrompt;
